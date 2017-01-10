@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+GPA0CON	uart.c	29;"	d	file:
+GPC0CON	main.c	8;"	d	file:
+GPC0DAT	main.c	9;"	d	file:
+UBRDIV0	uart.c	23;"	d	file:
+UCON0	uart.c	14;"	d	file:
+UDIVSLOT0	uart.c	24;"	d	file:
+UERSTAT0	uart.c	18;"	d	file:
+UFCON0	uart.c	15;"	d	file:
+UFSTAT0	uart.c	19;"	d	file:
+UINTM0	uart.c	27;"	d	file:
+UINTP0	uart.c	25;"	d	file:
+UINTSP0	uart.c	26;"	d	file:
+ULCON0	uart.c	13;"	d	file:
+UMCON0	uart.c	16;"	d	file:
+UMSTAT0	uart.c	20;"	d	file:
+URXH0	uart.c	22;"	d	file:
+UTRSTAT0	uart.c	17;"	d	file:
+UTXH0	uart.c	21;"	d	file:
+_UART_H	uart.h	9;"	d
+_start	start.S	/^_start:$/;"	l
+getchar	uart.c	/^char getchar(void)$/;"	f
+halt	start.S	/^halt:$/;"	l
+main	main.c	/^int main(void)$/;"	f
+printf	uart.c	/^int printf(const char *fmt, ...)$/;"	f
+put_hex	uart.c	/^void put_hex(unsigned char hex, unsigned char is_small)$/;"	f
+put_int	uart.c	/^void put_int(unsigned long v)$/;"	f
+put_int_2_hex	uart.c	/^void put_int_2_hex(unsigned long v, unsigned char is_small)$/;"	f
+putchar	uart.c	/^void putchar(char c)$/;"	f
+puts	uart.c	/^void puts(char *s)$/;"	f
+uart_init	uart.c	/^void uart_init(void)$/;"	f
+uart_recv_byte	uart.c	/^static unsigned char uart_recv_byte(void)$/;"	f	file:
+uart_send_byte	uart.c	/^static void uart_send_byte(unsigned char byte)$/;"	f	file:
