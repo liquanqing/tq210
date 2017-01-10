@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>uart · GitBook</title>
+        <title>lcd · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../8_LCD/lcd.html" />
+    <link rel="next" href="../../u-boot/" />
     
     
-    <link rel="prev" href="../1_led_on/led_on.html" />
+    <link rel="prev" href="../3_uart/uart.html" />
     
 
     </head>
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="uart.html">
+        <li class="chapter " data-level="1.2.2" data-path="../3_uart/uart.html">
             
-                <a href="uart.html">
+                <a href="../3_uart/uart.html">
             
                     
                     uart
@@ -142,9 +142,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../8_LCD/lcd.html">
+        <li class="chapter active" data-level="1.2.3" data-path="lcd.html">
             
-                <a href="../8_LCD/lcd.html">
+                <a href="lcd.html">
             
                     
                     lcd
@@ -229,7 +229,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >uart</a>
+        <a href="../.." >lcd</a>
     </h1>
 </div>
 
@@ -244,7 +244,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="uart">uart</h1>
+                                <h1 id="lcd">lcd</h1>
+<hr>
+<h2 id="&#x4ECB;&#x7ECD;">&#x4ECB;&#x7ECD;</h2>
+<p>&#x663E;&#x793A;&#x63A7;&#x5236;&#x5668;&#x652F;&#x6301;&#x4ECE;&#x6444;&#x50CF;&#x5934;&#x63A5;&#x53E3;&#x63A7;&#x5236;&#x5668;&#x7684;&#x672C;&#x5730;&#x603B;&#x7EBF;&#x6216;&#x8005;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x7684;&#x89C6;&#x9891;&#x7F13;&#x5B58;&#x4E2D;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x5230;&#x5916;&#x90E8;&#x7684;LCD&#x663E;&#x793A;&#x63A5;&#x53E3;
+&#x663E;&#x793A;&#x9A71;&#x52A8;&#x652F;&#x6301;RGB&#xFF0C;i80,YUV3&#x79CD;&#x603B;&#x7EBF;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;&#x9AD8;&#x5927;5&#x5C42;&#x652F;&#x6301;&#x591A;&#x79CD;&#x989C;&#x8272;&#x683C;&#x5F0F;&#xFF0C;256&#x7EA7;alpha&#x6DF7;&#x5408;&#xFF0C;&#x989C;&#x8272;&#x952E;&#xFF0C;&#x5750;
+&#x6807;&#x63A7;&#x5236;&#xFF0C;&#x8F6F;&#x4EF6;&#x6EDA;&#x52A8;&#xFF0C;&#x591A;&#x79CD;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x7B49;&#x7684;&#x56FE;&#x50CF;&#x8986;&#x76D6;&#x7A97;&#x53E3;&#x3002;<br>&#x663E;&#x793A;&#x63A7;&#x5236;&#x5668;&#x652F;&#x6301;&#x989C;&#x8272;&#x683C;&#x5F0F;&#x5982;&#xFF1A;<strong>RGB(1~24bpp)</strong> &#x548C; <strong>(YCbCr 4:4:40)</strong> 
+<img src="pic/LCD_LOGIC.jpg" alt="lcd"></p>
+<h2 id="&#x63A7;&#x5236;&#x6D41;&#x7A0B;-2">&#x63A7;&#x5236;&#x6D41;&#x7A0B; 2</h2>
 
                                 
                                 </section>
@@ -272,12 +279,12 @@
 
             
                 
-                <a href="../1_led_on/led_on.html" class="navigation navigation-prev " aria-label="Previous page: gpio">
+                <a href="../3_uart/uart.html" class="navigation navigation-prev " aria-label="Previous page: uart">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../8_LCD/lcd.html" class="navigation navigation-next " aria-label="Next page: lcd">
+                <a href="../../u-boot/" class="navigation navigation-next " aria-label="Next page: uboot">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -288,7 +295,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"uart","level":"1.2.2","depth":2,"next":{"title":"lcd","level":"1.2.3","depth":2,"path":"no_os/8_LCD/lcd.md","ref":"no_os/8_LCD/lcd.md","articles":[]},"previous":{"title":"gpio","level":"1.2.1","depth":2,"path":"no_os/1_led_on/led_on.md","ref":"no_os/1_led_on/led_on.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"no_os/3_uart/uart.md","mtime":"2017-01-10T03:15:35.485Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T04:17:39.784Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"lcd","level":"1.2.3","depth":2,"next":{"title":"uboot","level":"1.3","depth":1,"path":"u-boot/README.md","ref":"u-boot/README.md","articles":[]},"previous":{"title":"uart","level":"1.2.2","depth":2,"path":"no_os/3_uart/uart.md","ref":"no_os/3_uart/uart.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"no_os/8_LCD/lcd.md","mtime":"2017-01-10T04:14:39.227Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T04:17:39.784Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
