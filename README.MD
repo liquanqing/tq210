@@ -10,6 +10,7 @@ in this direction, it has code with peripheral of s5pv210.
 3. clock 
 4. copy sdmmc2ram 
 5. ddr 
+
 $$f(x)=a+b$$
 
 $$(ax^2 + bx + c = 0)$$
