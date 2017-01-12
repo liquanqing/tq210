@@ -10,7 +10,7 @@ int main(void)
 {
     puts("\n#####       Running in BL1          #####");
     puts("\n#####       Running at SRAM         #####");
-    copy_dat_to_sd(20, 10, 0x20000000);
+    copy_dat_to_sd(20, 80, 0x20000000);
 
     return 0;
 }

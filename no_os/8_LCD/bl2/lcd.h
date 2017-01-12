@@ -15,6 +15,9 @@ void lcd_backlight_ctrl(int is_on);
 void lcd_enable(int is_on);
 void draw_pix(int x0, int y0, u32 color);
 void draw_line(int x0, int y0, int x1, int y1, u32 color);
+void draw_rect(int x0, int y0, int width, int height, u32 color);
+void draw_circle(int x0, int y0, int r, u32 color);
+void draw_round_rect(int x0, int y0, int width, int height, int r, u32 color);
 void clear_lcd(void);
 
 #endif

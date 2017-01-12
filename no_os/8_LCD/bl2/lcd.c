@@ -279,3 +279,95 @@ void draw_line(int x0, int y0, int x1, int y1, u32 color)
 
     }
 }
+
+/*
+ * draw rect
+ * param position x0,y0
+ * param width HEIGHT
+ * param color
+ * return none
+ */
+void draw_rect(int x0, int y0, int width, int height, u32 color)
+{
+    int x1 = x0 + width;
+    int y1 = y0 + height;
+    draw_line(x0, y0, x0, y1, color);
+    draw_line(x1, y0, x1, y1, color);
+    draw_line(x0, y0, x1, y0, color);
+    draw_line(x0, y1, x1, y1, color);
+}
+
+/*
+ * draw circle
+ * param position
+ * param rad
+ * param color
+ */
+void draw_circle(int x0, int y0, int r, u32 color)
+{
+    int x = 0, y = r;
+    int delta = 1 - r;
+
+    while (y >= x) {
+        draw_pix(x + x0, y + y0, color);
+        draw_pix(y + x0, x + y0, color);
+        draw_pix(-x + x0, y + y0, color);
+        draw_pix(-y + x0, x + y0, color);
+
+        draw_pix(-x + x0, -y + y0, color);
+        draw_pix(-y + x0, -x + y0, color);
+        draw_pix(x + x0, -y + y0, color);
+        draw_pix(y + x0, -x + y0, color);
+
+        if (delta < 0) {
+            delta = delta + 4 * x + 6;
+        } else {
+            delta = delta + 4 * (x - y) + 10;
+            y --;
+        }
+
+        x ++;
+    }
+}
+
+/*
+ * draw round rect 
+ * param position
+ * param width height
+ * param rad
+ * param color
+ */
+void draw_round_rect(int x0, int y0, int width, int height, int rad, u32 color)
+{
+    int x = 0, y = rad;
+    int delta = 1 - rad;
+
+    draw_line(x0 + rad, y0, x0 + width - rad, y0, color);
+    draw_line(x0 + rad, y0 + height, x0 + width - rad, y0 + height, color);
+
+    draw_line(x0, y0 + rad, x0, y0 + height - rad, color);
+    draw_line(x0 + width, y0 + rad, x0 + width, y0 + height - rad, color);
+
+    while (y >= x) {
+        draw_pix(x + x0 + width - rad, y + y0 + height - rad, color);
+        draw_pix(y + x0 + width - rad, x + y0 + height - rad, color);
+
+        draw_pix(-x + x0 + rad, y + y0 + height - rad, color);
+        draw_pix(-y + x0 + rad, x + y0 + height - rad, color);
+
+        draw_pix(-x + x0 + rad, -y + y0 + rad, color);
+        draw_pix(-y + x0 + rad, -x + y0 + rad, color);
+
+        draw_pix(x + x0 + width - rad, -y + y0 + rad, color);
+        draw_pix(y + x0 + width - rad, -x + y0 + rad, color);
+
+        if (delta < 0) {
+            delta = delta + 4 * x + 6;
+        } else {
+            delta = delta + 4 * (x - y) + 10;
+            y --;
+        }
+
+        x ++;
+    }
+}

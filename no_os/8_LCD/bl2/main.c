@@ -34,8 +34,12 @@ int main(void)
 
     lcd_init();
     lcd_enable(1);
+    clear_lcd();
     lcd_backlight_ctrl(1);
     draw_line(100, 100, 200, 200, 0xFF0000);
+    draw_rect(100, 100, 200, 200, 0x00FF00);
+    draw_circle(200, 200, 50, 0x0000FF);
+    draw_round_rect(300, 300, 50, 50, 5, 0xFF0000);
 
     while(1) {
         if (toggle) {
