@@ -1,0 +1,6 @@
+TQ210 BOARD
+M:	Inc
+S:	Maintained
+F:	board/samsung/tq210/
+F:	include/configs/tq210.h
+F:	configs/tq210_defconfig

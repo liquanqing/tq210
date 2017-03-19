@@ -1,0 +1,76 @@
+arch/arm/mach-s5pc1xx/Kconfig:12:	bool "Support smdkc100 board"
+arch/arm/mach-s5pc1xx/Kconfig:21:source "board/samsung/smdkc100/Kconfig"
+arch/arm/dts/Makefile:10:dtb-$(CONFIG_S5PC100) += s5pc1xx-smdkc100.dtb
+arch/arm/dts/s5pc1xx-smdkc100.dts:16:	compatible = "samsung,smdkc100", "samsung,s5pc100";
+arch/arm/include/asm/mach-types.h:4754:# define machine_is_smdkc100()	(machine_arch_type == MACH_TYPE_SMDKC100)
+arch/arm/include/asm/mach-types.h:4756:# define machine_is_smdkc100()	(0)
+board/samsung/smdkc100/MAINTAINERS:4:F:	board/samsung/smdkc100/
+board/samsung/smdkc100/MAINTAINERS:5:F:	include/configs/smdkc100.h
+board/samsung/smdkc100/MAINTAINERS:6:F:	configs/smdkc100_defconfig
+board/samsung/smdkc100/Makefile:11:obj-y	:= smdkc100.o
+board/samsung/smdkc100/Kconfig:4:	default "smdkc100"
+board/samsung/smdkc100/Kconfig:13:	default "smdkc100"
+doc/README.s5pc1xx:24:make smdkc100_config
+configs/smdkc100_defconfig:6:CONFIG_DEFAULT_DEVICE_TREE="s5pc1xx-smdkc100"
+MAINTAINERS:146:F:	arch/arm/mach-s5pc1xx/
+arch/arm/cpu/armv7/Makefile:28:ifneq (,$(filter s5pc1xx exynos,$(SOC)))
+arch/arm/Makefile:68:machine-$(CONFIG_ARCH_S5PC1XX)		+= s5pc1xx
+arch/arm/mach-s5pc1xx/clock.c:280:/* s5pc1xx: return uart clock frequency */
+arch/arm/mach-s5pc1xx/clock.c:281:static unsigned long s5pc1xx_get_uart_clk(int dev_index)
+arch/arm/mach-s5pc1xx/clock.c:289:/* s5pc1xx: return pwm clock frequency */
+arch/arm/mach-s5pc1xx/clock.c:290:static unsigned long s5pc1xx_get_pwm_clk(void)
+arch/arm/mach-s5pc1xx/clock.c:316:	return s5pc1xx_get_pwm_clk();
+arch/arm/mach-s5pc1xx/clock.c:321:	return s5pc1xx_get_uart_clk(dev_index);
+arch/arm/mach-s5pc1xx/Kconfig:18:	default "s5pc1xx"
+arch/arm/Kconfig:962:source "arch/arm/mach-s5pc1xx/Kconfig"
+arch/arm/dts/Makefile:10:dtb-$(CONFIG_S5PC100) += s5pc1xx-smdkc100.dtb
+arch/arm/dts/Makefile:11:dtb-$(CONFIG_S5PC110) += s5pc1xx-goni.dtb
+board/samsung/smdkc100/Kconfig:10:	default "s5pc1xx"
+board/samsung/goni/goni.c:147:static int s5pc1xx_phy_control(int on)
+board/samsung/goni/goni.c:186:	.phy_control = s5pc1xx_phy_control,
+board/samsung/goni/Kconfig:10:	default "s5pc1xx"
+configs/smdkc100_defconfig:6:CONFIG_DEFAULT_DEVICE_TREE="s5pc1xx-smdkc100"
+configs/s5p_goni_defconfig:4:CONFIG_DEFAULT_DEVICE_TREE="s5pc1xx-goni"
+drivers/gpio/s5p_gpio.c:355:	{ .compatible = "samsung,s5pc100-pinctrl" },
+arch/arm/cpu/armv7/s5p-common/cpu_info.c:14:/* Default is s5pc100 */
+arch/arm/mach-s5pc1xx/clock.c:26:static unsigned long s5pc100_get_pll_clk(int pllreg)
+arch/arm/mach-s5pc1xx/clock.c:28:	struct s5pc100_clock *clk =
+arch/arm/mach-s5pc1xx/clock.c:29:		(struct s5pc100_clock *)samsung_get_base_clock();
+arch/arm/mach-s5pc1xx/clock.c:76:/* s5pc100: return pll clock frequency */
+arch/arm/mach-s5pc1xx/clock.c:153:/* s5pc100: return ARM clock frequency */
+arch/arm/mach-s5pc1xx/clock.c:154:static unsigned long s5pc100_get_arm_clk(void)
+arch/arm/mach-s5pc1xx/clock.c:156:	struct s5pc100_clock *clk =
+arch/arm/mach-s5pc1xx/clock.c:157:		(struct s5pc100_clock *)samsung_get_base_clock();
+arch/arm/mach-s5pc1xx/clock.c:175:/* s5pc100: return HCLKD0 frequency */
+arch/arm/mach-s5pc1xx/clock.c:178:	struct s5pc100_clock *clk =
+arch/arm/mach-s5pc1xx/clock.c:179:		(struct s5pc100_clock *)samsung_get_base_clock();
+arch/arm/mach-s5pc1xx/clock.c:192:/* s5pc100: return PCLKD1 frequency */
+arch/arm/mach-s5pc1xx/clock.c:195:	struct s5pc100_clock *clk =
+arch/arm/mach-s5pc1xx/clock.c:196:		(struct s5pc100_clock *)samsung_get_base_clock();
+arch/arm/mach-s5pc1xx/clock.c:274:/* s5pc100: return peripheral clock frequency */
+arch/arm/mach-s5pc1xx/clock.c:275:static unsigned long s5pc100_get_pclk(void)
+arch/arm/mach-s5pc1xx/clock.c:286:		return s5pc100_get_pclk();
+arch/arm/mach-s5pc1xx/clock.c:295:		return s5pc100_get_pclk();
+arch/arm/mach-s5pc1xx/clock.c:303:		return s5pc100_get_pll_clk(pllreg);
+arch/arm/mach-s5pc1xx/clock.c:311:		return s5pc100_get_arm_clk();
+arch/arm/mach-s5pc1xx/include/mach/clock.h:13:struct s5pc100_clock {
+arch/arm/mach-s5pc1xx/include/mach/gpio.h:23:enum s5pc100_gpio_pin {
+arch/arm/mach-s5pc1xx/include/mach/gpio.h:727:static struct gpio_info s5pc100_gpio_data[S5PC100_GPIO_NUM_PARTS] = {
+arch/arm/mach-s5pc1xx/include/mach/gpio.h:738:	if (cpu_is_s5pc100())
+arch/arm/mach-s5pc1xx/include/mach/gpio.h:739:		return s5pc100_gpio_data;
+arch/arm/mach-s5pc1xx/include/mach/gpio.h:748:	if (cpu_is_s5pc100())
+arch/arm/mach-s5pc1xx/include/mach/gpio.h:783:static const struct gpio_name_num_table s5pc100_gpio_table[] = {
+arch/arm/mach-s5pc1xx/include/mach/cpu.h:79:IS_SAMSUNG_TYPE(s5pc100, 0xc100)
+arch/arm/mach-s5pc1xx/include/mach/cpu.h:85:	if (cpu_is_s5pc100())					\
+arch/arm/dts/s5pc1xx-smdkc100.dts:12:#include "s5pc100-pinctrl.dtsi"
+arch/arm/dts/s5pc1xx-smdkc100.dts:16:	compatible = "samsung,smdkc100", "samsung,s5pc100";
+arch/arm/dts/s5pc1xx-smdkc100.dts:25:		compatible = "samsung,s5pc100-pinctrl";
+arch/arm/include/asm/mach-types.h:7526:# define machine_is_fs_s5pc100()	(machine_arch_type == MACH_TYPE_FS_S5PC100)
+arch/arm/include/asm/mach-types.h:7528:# define machine_is_fs_s5pc100()	(0)
+board/samsung/smdkc100/onenand.c:22:	struct s5pc100_clock *clk =
+board/samsung/smdkc100/onenand.c:23:			(struct s5pc100_clock *)samsung_get_base_clock();
+board/samsung/goni/lowlevel_init.S:65:	/* Don't setup at s5pc100 */
+doc/README.s5pc1xx:35:	if (cpu_is_s5pc100())
+doc/README.s5pc1xx:36:		printf("cpu is s5pc100\n");
+doc/README.s5pc1xx:45:	struct s5pc100_gpio *gpio = (struct s5pc100_gpio*)S5PC100_GPIO_BASE;
+include/configs/s5p_goni.h:6: * Configuation settings for the SAMSUNG Universal (s5pc100) board.

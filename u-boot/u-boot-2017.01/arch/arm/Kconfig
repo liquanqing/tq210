@@ -1,0 +1,132 @@
+menu "ARM architecture"
+	depends on ARM
+
+config SYS_ARCH
+	default "arm"
+
+config ARM64
+	bool
+	select PHYS_64BIT
+	select SYS_CACHE_SHIFT_6
+
+config DMA_ADDR_T_64BIT
+	bool
+	default y if ARM64
+
+config HAS_VBAR
+	bool
+
+config HAS_THUMB2
+	bool
+
+config CPU_ARM720T
+	bool
+	select SYS_CACHE_SHIFT_5
+
+config CPU_V7
+	bool
+	select HAS_VBAR
+	select HAS_THUMB2
+	select SYS_CACHE_SHIFT_6
+
+config CPU_V7M
+	bool
+	select HAS_THUMB2
+	select SYS_CACHE_SHIFT_5
+
+config CPU_PXA
+	bool
+	select SYS_CACHE_SHIFT_5
+
+config CPU_SA1100
+	bool
+	select SYS_CACHE_SHIFT_5
+
+config SYS_CPU
+	default "armv7" if CPU_V7
+
+config SYS_ARM_ARCH
+	int
+	default 7 if CPU_V7
+
+config SYS_CACHE_SHIFT_5
+	bool
+
+config SYS_CACHE_SHIFT_6
+	bool
+
+config SYS_CACHE_SHIFT_7
+	bool
+
+config SYS_CACHELINE_SIZE
+	int
+	default 128 if SYS_CACHE_SHIFT_7
+	default 64 if SYS_CACHE_SHIFT_6
+	default 32 if SYS_CACHE_SHIFT_5
+
+config SEMIHOSTING
+	bool "support boot from semihosting"
+	help
+	  In emulated environments, semihosting is a way for
+	  the hosted environment to call out to the emulator to
+	  retrieve files from the host machine.
+
+config SYS_L2CACHE_OFF
+	bool "L2cache off"
+	help
+	  If SoC does not support L2CACHE or one do not want to enable
+	  L2CACHE, choose this option.
+
+config ENABLE_ARM_SOC_BOOT0_HOOK
+	bool "prepare BOOT0 header"
+	help
+	  If the SoC's BOOT0 requires a header area filled with (magic)
+	  values, then choose this option, and create a define called
+	  ARM_SOC_BOOT0_HOOK which contains the required assembler
+	  preprocessor code.
+
+config USE_ARCH_MEMCPY
+	bool "Use an assembly optimized implementation of memcpy"
+	default y if CPU_V7
+	depends on !ARM64
+	help
+	  Enable the generation of an optimized version of memcpy.
+	  Such implementation may be faster under some conditions
+	  but may increase the binary size.
+
+config USE_ARCH_MEMSET
+	bool "Use an assembly optimized implementation of memset"
+	default y if CPU_V7
+	depends on !ARM64
+	help
+	  Enable the generation of an optimized version of memset.
+	  Such implementation may be faster under some conditions
+	  but may increase the binary size.
+
+config ARM64_SUPPORT_AARCH32
+	bool "ARM64 system support AArch32 execution state"
+	default y if ARM64 && !TARGET_THUNDERX_88XX
+	help
+	  This ARM64 system supports AArch32 execution state.
+
+choice
+	prompt "Target select"
+	default TARGET_HIKEY
+
+config ARCH_S5PV210
+	bool "Samsung S5PV210"
+	select CPU_V7
+	select DM
+	select DM_SERIAL
+	select DM_GPIO
+
+endchoice
+
+
+source "arch/arm/mach-s5pv210/Kconfig"
+
+source "arch/arm/cpu/armv7/Kconfig"
+
+source "arch/arm/Kconfig.debug"
+
+endmenu
