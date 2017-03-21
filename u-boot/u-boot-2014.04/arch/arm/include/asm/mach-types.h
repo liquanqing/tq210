@@ -317,7 +317,7 @@ extern unsigned int __machine_arch_type;
 #define MACH_TYPE_RD88F5181L_GE        1812
 #define MACH_TYPE_RD88F5181L_FXO       1818
 #define MACH_TYPE_STAMP9G20            1824
-#define MACH_TYPE_TQ210                1825
+#define MACH_TYPE_TQ210                2456
 #define MACH_TYPE_SMDKC100             1826
 #define MACH_TYPE_TAVOREVB             1827
 #define MACH_TYPE_SAAR                 1828

@@ -292,7 +292,7 @@ void board_init_f(ulong bootflag)
 			hang ();
 		}
 	}
-
+    puts("");
 #ifdef CONFIG_OF_CONTROL
 	/* For now, put this check after the console is ready */
 	if (fdtdec_prepare_fdt()) {

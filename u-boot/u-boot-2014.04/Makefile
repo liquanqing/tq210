@@ -195,9 +195,10 @@ VENDOR=
 #########################################################################
 
 # set default to nothing for native builds
-ifeq ($(HOSTARCH),$(ARCH))
-CROSS_COMPILE ?= 
-endif
+#ifeq ($(HOSTARCH),$(ARCH))
+#CROSS_COMPILE ?= 
+#endif
+CROSS_COMPILE = arm-linux-
 
 # SHELL used by kbuild
 CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
@@ -316,7 +317,6 @@ $(srctree)/scripts/Kbuild.include: ;
 include $(srctree)/scripts/Kbuild.include
 
 # Make variables (CC, etc...)
-CROSS_COMPILE = arm-linux-
 AS		= $(CROSS_COMPILE)as
 # Always use GNU ld
 ifneq ($(shell $(CROSS_COMPILE)ld.bfd -v 2> /dev/null),)
@@ -726,6 +726,7 @@ combine: u-boot.bin spl/u-boot-spl.bin FORCE
 	truncate $(objtree)/tmp.bin -c -s 16k
 	cat $(objtree)/u-boot.bin >> $(objtree)/tmp.bin
 	cp $(objtree)/tmp.bin $(objtree)/u-boot-a.bin
+	rm $(objtree)/tmp.bin
 
 LDFLAGS_u-boot += $(LDFLAGS_FINAL)
 ifneq ($(CONFIG_SYS_TEXT_BASE),)
