@@ -782,6 +782,17 @@ Options:
 <p>Delete USER from the system</p>
 
 </dd>
+<dt id="depmod"><b>depmod</b></dt>
+<dd>
+
+<p>depmod [-n] [-b BASE] [VERSION] [MODFILES]...</p>
+
+<p>Generate modules.dep, alias, and symbols files</p>
+
+<pre><code>        -b BASE Use BASE/lib/modules/VERSION
+        -n      Dry run: print files to stdout</code></pre>
+
+</dd>
 <dt id="devmem"><b>devmem</b></dt>
 <dd>
 
@@ -2594,14 +2605,16 @@ TYPE:
 <dt id="modprobe"><b>modprobe</b></dt>
 <dd>
 
-<p>modprobe [-qfwrsv] MODULE [SYMBOL=VALUE]...</p>
+<p>modprobe [-alrqvsDb] MODULE [SYMBOL=VALUE]...</p>
 
-<pre><code>        -r      Remove MODULE (stacks) or do autoclean
+<pre><code>        -a      Load multiple MODULEs
+        -l      List (MODULE is a pattern)
+        -r      Remove MODULE (stacks) or do autoclean
         -q      Quiet
         -v      Verbose
-        -f      Force
-        -w      Wait for unload
-        -s      Report via syslog instead of stderr</code></pre>
+        -s      Log to syslog
+        -D      Show dependencies
+        -b      Apply blacklist to module names too</code></pre>
 
 </dd>
 <dt id="more"><b>more</b></dt>

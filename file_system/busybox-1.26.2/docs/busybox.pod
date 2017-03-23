@@ -731,6 +731,15 @@ deluser [--remove-home] USER
 
 Delete USER from the system
 
+=item B<depmod>
+
+depmod [-n] [-b BASE] [VERSION] [MODFILES]...
+
+Generate modules.dep, alias, and symbols files
+
+	-b BASE	Use BASE/lib/modules/VERSION
+	-n	Dry run: print files to stdout
+
 =item B<devmem>
 
 devmem ADDRESS [WIDTH [VALUE]]
@@ -2369,14 +2378,16 @@ modinfo [-adlpn0] [-F keyword] MODULE
 
 =item B<modprobe>
 
-modprobe [-qfwrsv] MODULE [SYMBOL=VALUE]...
+modprobe [-alrqvsDb] MODULE [SYMBOL=VALUE]...
 
+	-a	Load multiple MODULEs
+	-l	List (MODULE is a pattern)
 	-r	Remove MODULE (stacks) or do autoclean
 	-q	Quiet
 	-v	Verbose
-	-f	Force
-	-w	Wait for unload
-	-s	Report via syslog instead of stderr
+	-s	Log to syslog
+	-D	Show dependencies
+	-b	Apply blacklist to module names too
 
 =item B<more>
 

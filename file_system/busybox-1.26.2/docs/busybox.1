@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "BUSYBOX 1"
-.TH BUSYBOX 1 "2017-03-20" "version 1.26.2" "busybox"
+.TH BUSYBOX 1 "2017-03-22" "version 1.26.2" "busybox"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -888,6 +888,16 @@ Delete group \s-1GROUP\s0 from the system or user \s-1USER\s0 from group \s-1GRO
 deluser [\-\-remove\-home] \s-1USER\s0
 .Sp
 Delete \s-1USER\s0 from the system
+.IP "\fBdepmod\fR" 4
+.IX Item "depmod"
+depmod [\-n] [\-b \s-1BASE\s0] [\s-1VERSION\s0] [\s-1MODFILES\s0]...
+.Sp
+Generate modules.dep, alias, and symbols files
+.Sp
+.Vb 2
+\&        \-b BASE Use BASE/lib/modules/VERSION
+\&        \-n      Dry run: print files to stdout
+.Ve
 .IP "\fBdevmem\fR" 4
 .IX Item "devmem"
 devmem \s-1ADDRESS\s0 [\s-1WIDTH\s0 [\s-1VALUE\s0]]
@@ -2593,15 +2603,17 @@ modinfo [\-adlpn0] [\-F keyword] \s-1MODULE\s0
 .Ve
 .IP "\fBmodprobe\fR" 4
 .IX Item "modprobe"
-modprobe [\-qfwrsv] \s-1MODULE\s0 [SYMBOL=VALUE]...
+modprobe [\-alrqvsDb] \s-1MODULE\s0 [SYMBOL=VALUE]...
 .Sp
-.Vb 6
+.Vb 8
+\&        \-a      Load multiple MODULEs
+\&        \-l      List (MODULE is a pattern)
 \&        \-r      Remove MODULE (stacks) or do autoclean
 \&        \-q      Quiet
 \&        \-v      Verbose
-\&        \-f      Force
-\&        \-w      Wait for unload
-\&        \-s      Report via syslog instead of stderr
+\&        \-s      Log to syslog
+\&        \-D      Show dependencies
+\&        \-b      Apply blacklist to module names too
 .Ve
 .IP "\fBmore\fR" 4
 .IX Item "more"

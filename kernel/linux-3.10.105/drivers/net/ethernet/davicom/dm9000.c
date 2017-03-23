@@ -175,7 +175,6 @@ static u8
 ior(board_info_t * db, int reg)
 {
 	writeb(reg, db->io_addr);
-    udelay(150);
 	return readb(db->io_data);
 }
 
@@ -1512,6 +1511,7 @@ dm9000_probe(struct platform_device *pdev)
 	iow(db, DM9000_NCR, NCR_MAC_LBK | NCR_RST);
 
 	/* try multiple times, DM9000 sometimes gets the read wrong */
+    udelay(150);
 	for (i = 0; i < 8; i++) {
 		id_val  = ior(db, DM9000_VIDL);
 		id_val |= (u32)ior(db, DM9000_VIDH) << 8;

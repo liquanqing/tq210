@@ -1,1 +1,1 @@
-#define CONFIG_PREFIX "./_install"
+#define CONFIG_PREFIX "/home/incpc/nfsroot/rootfs"

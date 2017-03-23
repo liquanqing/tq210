@@ -352,9 +352,13 @@ attempt to open miscutils/lib.a succeeded
 (miscutils/lib.a)wall.o
 (miscutils/lib.a)watchdog.o
 attempt to open modutils/lib.a succeeded
+(modutils/lib.a)depmod.o
+(modutils/lib.a)insmod.o
+(modutils/lib.a)lsmod.o
 (modutils/lib.a)modinfo.o
-(modutils/lib.a)modprobe-small.o
+(modutils/lib.a)modprobe.o
 (modutils/lib.a)modutils.o
+(modutils/lib.a)rmmod.o
 attempt to open networking/lib.a succeeded
 (networking/lib.a)arp.o
 (networking/lib.a)arping.o

@@ -212,11 +212,11 @@
 /usr/bin/volname
 /usr/bin/wall
 /sbin/watchdog
-/sbin/modinfo
-/sbin/modprobe
 /sbin/depmod
 /sbin/insmod
 /sbin/lsmod
+/sbin/modinfo
+/sbin/modprobe
 /sbin/rmmod
 /sbin/arp
 /usr/sbin/arping
